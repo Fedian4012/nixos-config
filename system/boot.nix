@@ -12,7 +12,8 @@
       device = "nodev";
       efiSupport = true;
       useOSProber = false;
-      timeout = 5;
     };
+
+    timeout = 5;
   };
 }
