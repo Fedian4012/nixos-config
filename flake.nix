@@ -1,38 +1,48 @@
 {
-  # Une courte description de ton flake, pour documentation
-  description = "Configuration NixOS de François";
+  description = "NixOS configuration for François";
 
-  # Définition des inputs : toutes les sources externes dont ce flake dépend
+  # -------------------
+  # Inputs du flake
+  # -------------------
   inputs = {
-    # On prend nixpkgs depuis GitHub, version NixOS 25.11
+    # Nixpkgs pour NixOS
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
 
-    # Plus tard, tu pourrais ajouter Home Manager ou d'autres flakes
-    # home-manager.url = "github:nix-community/home-manager";
-  };
-
-  # Outputs définit ce que le flake produit
-  outputs = { self, nixpkgs, ... }:  # self = ce flake, nixpkgs = input défini plus haut
-  let
-    # Définition de l'architecture de la machine. Ici x86_64
-    system = "x86_64-linux";
-  in
-  {
-    # Section réservée aux configurations NixOS
-    nixosConfigurations = {
-      # Nom de la machine : tu peux mettre le hostname ou un nom quelconque
-      nixos = nixpkgs.lib.nixosSystem {
-        # On passe l'architecture
-        inherit system;
-
-        # Liste des modules NixOS à inclure dans la build
-        modules = [
-          ./configuration.nix   # Ton fichier principal, qui inclut déjà tes sous-modules
-        ];
-
-        # Tu pourrais ajouter ici des overrides spécifiques ou d'autres options,
-        # comme l'utilisation de Home Manager intégré via flake
-      };
+    # Home Manager pour gérer la config utilisateur
+    home-manager = {
+      url = "github:nix-community/home-manager/release-25.11";
+      # On s'assure que la version de nixpkgs utilisée par HM suit celle du flake
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
+
+  # -------------------
+  # Outputs
+  # -------------------
+  outputs = inputs@{ nixpkgs, home-manager, ... }: 
+    let
+      system = "x86_64-linux";  # Architecture de la machine
+    in
+    {
+      # Configurations NixOS disponibles dans ce flake
+      nixosConfigurations = {
+        francois-nixos = nixpkgs.lib.nixosSystem {
+          inherit system;
+
+          # Modules NixOS à inclure
+          modules = [
+            ./configuration.nix                          # Ton fichier principal
+            home-manager.nixosModules.home-manager       # Ajout de Home Manager comme module NixOS
+            {
+              # Options Home Manager
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+
+              # Déclaration de ton utilisateur
+              home-manager.users.francois = import ./users/francois.nix;
+            }
+          ];
+        };
+      };
+    };
 }

@@ -1,14 +1,11 @@
-{config, pkgs, ...}:
+{ pkgs, ... }:
 
 {
-  users.users.francois = {
-    isNormalUser = true;
-    description = "François Ruau";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      firefox
-      thunderbird
-      vscode
-    ];
-  };
+  home.username = "francois";
+  home.homeDirectory = "/home/francois";
+
+  home.stateVersion = "25.11";
+
+  programs.zsh.enable = true;
+  programs.git.enable = true;
 }

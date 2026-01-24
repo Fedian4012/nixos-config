@@ -10,11 +10,10 @@
       ./system/locale.nix
       ./system/network.nix
       ./system/packages.nix
+      ./system/users.nix
       ./system/x11.nix    
- 
-      ./system/services
 
-      ./users/francois.nix
+      ./system/services
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
