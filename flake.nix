@@ -1,5 +1,5 @@
 {
-  description = "NixOS configuration for François";
+  description = "La configuration NixOS de François";
 
   # -------------------
   # Inputs du flake
@@ -39,7 +39,7 @@
               home-manager.useUserPackages = true;
 
               # Déclaration de ton utilisateur
-              home-manager.users.francois = import ./users/francois.nix;
+              home-manager.users.francois = import ./users/francois/home.nix;
             }
           ];
         };
