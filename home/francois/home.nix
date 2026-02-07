@@ -17,17 +17,7 @@
     thunderbird
     vscode
   ];
-
-
-  home.pointerCursor = {
-    name = "Adwaita";
-    package = pkgs.adwaita-icon-theme;
-    size = 24; # optionnel
-  };
-
-  # Important : active aussi GTK integration
-  gtk.enable = true;
-
+  
   programs.gnome-shell = {
     enable = true;
 

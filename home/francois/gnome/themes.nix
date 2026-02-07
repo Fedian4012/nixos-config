@@ -17,22 +17,17 @@
     font = {
       name = "Roboto 11";
     };
-
-    cursorTheme = {
-      name = "Catppuccin-Latte-Peach";
-      package = pkgs.catppuccin-cursors.lattePeach;
-      size = 24;
-    };
   };
 
   home.pointerCursor = {
-    name = "Catppuccin-Latte-Peach";
-    package = pkgs.catppuccin-cursors.lattePeach;
-    size = 24;
+    name = "Adwaita";
+    package = pkgs.adwaita-icon-theme;
+    size = 24; # optionnel
   };
 
   dconf.settings."org/gnome/desktop/interface" = {
     color-scheme = "prefer-dark";
     accent-color = "yellow";
   };
+
 }
