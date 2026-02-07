@@ -38,8 +38,6 @@
     "org/gnome/shell/extensions/dash-to-dock" = {
       dock-position = "BOTTOM";
       autohide = true;
-      dash-max-icon-size = 32;
-      extend-height = false;
     };
   };
 }

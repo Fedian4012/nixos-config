@@ -5,15 +5,16 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
 
-      ./system/boot.nix
-      ./system/desktop.nix
-      ./system/gc.nix
-      ./system/locale.nix
-      ./system/network.nix
-      ./system/packages.nix
-      ./users/francois/settings.nix
+      ./boot.nix
+      ./desktop.nix
+      ./gc.nix
+      ./locale.nix
+      ./network.nix
+      ./packages.nix
+      
+      ./home/francois/settings.nix
 
-      ./system/services
+      ./services
     ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

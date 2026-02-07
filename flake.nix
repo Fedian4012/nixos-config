@@ -31,15 +31,15 @@
 
           # Modules NixOS à inclure
           modules = [
-            ./configuration.nix                          # Ton fichier principal
-            home-manager.nixosModules.home-manager       # Ajout de Home Manager comme module NixOS
+            ./hosts/tourdev-papa/configuration.nix # Fichier principal
+            home-manager.nixosModules.home-manager # Ajout de Home Manager comme module NixOS
             {
               # Options Home Manager
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
 
               # Déclaration de ton utilisateur
-              home-manager.users.francois = import ./users/francois/home.nix;
+              home-manager.users.francois = import ./home/francois/home.nix;
             }
           ];
         };
