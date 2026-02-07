@@ -1,17 +1,21 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ./gnome
+  ];
+
   # Définition de l'utilisateur
   home.username = "francois";
   home.homeDirectory = "/home/francois";
 
   home.stateVersion = "25.11";
+
   # Packages utilisateur
   home.packages = with pkgs; [
     firefox
     thunderbird
     vscode
-    # ajoute ici d'autres programmes que tu veux disponibles pour l'utilisateur
   ];
 
 
