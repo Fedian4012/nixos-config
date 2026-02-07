@@ -11,8 +11,8 @@
       ./locale.nix
       ./network.nix
       ./packages.nix
-      
-      ./home/francois/settings.nix
+
+      ../../home/francois/settings.nix
 
       ./services
     ];
