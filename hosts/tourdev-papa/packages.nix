@@ -10,12 +10,12 @@
     os-prober
     efibootmgr
 
-    emacs
-
     git
     gh
 
     wget
     tree
+
+    btop
   ];
 }

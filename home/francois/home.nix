@@ -15,23 +15,16 @@
   home.packages = with pkgs; [
     firefox
     thunderbird
+    discord
+
+    libreoffice
+
+    vlc
+
+    terminator
     vscode
+    virtualbox
   ];
-  
-  programs.gnome-shell = {
-    enable = true;
 
-    extensions = [
-      {
-        package = pkgs.gnomeExtensions.dash-to-dock;
-      }
-    ];
-  };
-
-  dconf.settings = {
-    "org/gnome/shell/extensions/dash-to-dock" = {
-      dock-position = "BOTTOM";
-      autohide = true;
-    };
-  };
+  programs.gnome-shell.enable = true;
 }
