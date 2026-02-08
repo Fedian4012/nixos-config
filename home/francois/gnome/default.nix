@@ -7,5 +7,7 @@
     ./themes.nix
     ./ui-tweaks.nix
     ./wallpaper.nix
+
+    ./extensions.nix
   ];
 }

@@ -22,12 +22,11 @@
   home.pointerCursor = {
     name = "Adwaita";
     package = pkgs.adwaita-icon-theme;
-    size = 24; # optionnel
+    size = 24;
   };
 
   dconf.settings."org/gnome/desktop/interface" = {
     color-scheme = "prefer-dark";
     accent-color = "yellow";
   };
-
 }
