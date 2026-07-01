@@ -19,8 +19,6 @@
 
     libreoffice
 
-    vlc
-
     terminator
     vscode
     virtualbox

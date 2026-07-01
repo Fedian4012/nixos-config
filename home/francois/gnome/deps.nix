@@ -7,6 +7,7 @@
     orchis-theme
     colloid-icon-theme
     catppuccin-cursors.lattePeach
+    
     roboto
     nerd-fonts.hack
   ];

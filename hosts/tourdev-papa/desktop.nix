@@ -11,7 +11,7 @@
   };
 
   services.desktopManager.gnome.enable = true;
-  services.xserver.desktopManager.xfce.enable = true;
+  # services.xserver.desktopManager.xfce.enable = true;
 
   services.xserver.xkb = {
     layout = "fr";

@@ -9,13 +9,13 @@
     
     os-prober
     efibootmgr
+    gparted
 
     git
     gh
 
     wget
     tree
-
     btop
   ];
 }
