@@ -5,7 +5,7 @@
     francois = {
     isNormalUser = true;
     description = "François Ruau";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "scanner"];
     };
   };
 }

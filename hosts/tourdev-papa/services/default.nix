@@ -3,7 +3,7 @@
 {
   imports = [
     ./audio.nix
-    ./cups.nix
+    ./printing.nix
     ./ntp.nix
     ./sshd.nix
   ];

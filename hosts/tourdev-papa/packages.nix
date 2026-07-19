@@ -17,5 +17,9 @@
     wget
     tree
     btop
+
+    sane-airscan  # Pour les scanners compatibles AirPrint/IPP (optionnel mais utile)
+    epson-escpr    # Pilote Epson (peut inclure le support scanner)
+    simple-scan 
   ];
 }
