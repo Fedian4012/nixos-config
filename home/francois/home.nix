@@ -19,7 +19,7 @@
 
     libreoffice
 
-    terminator
+    alacritty
     vscode
     virtualbox
   ];

@@ -4,6 +4,8 @@
   gtk = {
     enable = true;
 
+    gtk4.theme = null;
+
     theme = {
       name = "Orchis-Dark";
       package = pkgs.orchis-theme;
